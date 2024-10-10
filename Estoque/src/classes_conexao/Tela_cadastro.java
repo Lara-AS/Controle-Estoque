@@ -1,9 +1,9 @@
 package classes_conexao;
 
-import javax.swing.*;  // Pacote para os componentes da GUI (JFrame, JButton, JLabel, etc.)
-//import java.awt.*;     // Pacote para layouts e manipulação de gráficos
+import javax.swing.*;  
+//import java.awt.*;   
 import java.awt.event.*;
-import java.awt.Font;  // Pacote para manipulação de eventos (ActionListener)
+import java.awt.Font;  
 
 public class Tela_cadastro extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -17,11 +17,14 @@ public class Tela_cadastro extends JFrame {
     public Tela_cadastro() {
         setTitle("Cadastro de Produtos");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(300, 300, 562, 403);
+        setSize(562, 403);
         contentPane = new JPanel();
         contentPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+        setLocationRelativeTo(null); //centraliza
+
+
 
         JLabel lblNome = new JLabel("Nome do Produto:");
         lblNome.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -74,10 +77,10 @@ public class Tela_cadastro extends JFrame {
             }
         });
 
-        setVisible(true); // Torna a janela visível
+        setVisible(true); //janela visível
     }
 
     public static void main(String[] args) {
-        new Tela_cadastro(); // Cria a tela de cadastro
+        new Tela_cadastro(); //xria a t.cadastro
     }
 }

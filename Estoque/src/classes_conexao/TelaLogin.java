@@ -13,13 +13,14 @@ public class TelaLogin extends JFrame {
     public static String senhaDigitada;
 
     public TelaLogin() {
-        // Configurações da tela de login
         setTitle("Tela de Login");
         setSize(562, 403);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null); // Usando layout absoluto
+        setLocationRelativeTo(null); //centraliza
 
-        // Componentes da tela de Login
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        // Componentes da t.login
         JLabel lblUsuario = new JLabel("Usuário:");
         lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
         lblUsuario.setBounds(70, 85, 100, 25);
@@ -43,17 +44,16 @@ public class TelaLogin extends JFrame {
         btnLogin.setBounds(204, 247, 141, 40);
         getContentPane().add(btnLogin);
 
-        // Ação ao clicar no botão "Entrar"
+        // acao no botão entrar
         btnLogin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 usuarioDigitado = txtUsuario.getText();
                 senhaDigitada = new String(txtSenha.getPassword());
 
-                // Validação simples de login
-                if (usuarioDigitado.equals("admin") && senhaDigitada.equals("1234")) { // Exemplo de login válido
-                    setVisible(false); // Fecha a tela de login
-                    TelaPrincipal telaPrincipal = new TelaPrincipal(); // Chama a tela principal
-                    telaPrincipal.setVisible(true); // Abre a tela principal
+                if (usuarioDigitado.equals("admin") && senhaDigitada.equals("1234")) {
+                    setVisible(false); // Fecha login
+                    TelaPrincipal telaPrincipal = new TelaPrincipal(); // Chama a t.principal
+                    telaPrincipal.setVisible(true); // Abre a t.principal
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos!");
                 }
@@ -62,7 +62,7 @@ public class TelaLogin extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Torna a tela de login visível
+        //tela de login visível
         TelaLogin telaLogin = new TelaLogin();
         telaLogin.setVisible(true);
     }
